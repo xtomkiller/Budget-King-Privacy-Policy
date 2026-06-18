@@ -1,0 +1,2098 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Budget King Privacy Policy – Learn how we collect, use, and protect your personal data in the Budget King Android app." />
+  <meta name="robots" content="index, follow" />
+  <title>Privacy Policy – Budget King</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet" />
+  <style>
+    /* ══════════════════════════════════════════════════════════════════════
+       BUDGET KING — PRIVACY POLICY
+       Enterprise-grade fintech design system
+       ══════════════════════════════════════════════════════════════════════ */
+
+    /* ───── CSS Custom Properties ─────────────────────────── */
+    :root {
+      --bg-deep: #050B18;
+      --bg-surface: #0E1728;
+      --bg-card: #121D33;
+      --bg-card-hover: #18273F;
+      --primary: #22C55E;
+      --primary-glow: rgba(34, 197, 94, 0.15);
+      --primary-dim: rgba(34, 197, 94, 0.08);
+      --secondary: #4FD1C5;
+      --secondary-dim: rgba(79, 209, 197, 0.08);
+      --text: #F8FAFC;
+      --text-secondary: #94A3B8;
+      --text-muted: rgba(148, 163, 184, 0.5);
+      --border: rgba(148, 163, 184, 0.08);
+      --border-hover: rgba(148, 163, 184, 0.14);
+      --radius-lg: 20px;
+      --radius-md: 14px;
+      --radius-sm: 10px;
+      --radius-xs: 6px;
+      --transition: 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+      --font: 'Inter', system-ui, -apple-system, sans-serif;
+    }
+
+    /* ───── Reset & Base ──────────────────────────────────── */
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 100px;
+    }
+
+    body {
+      font-family: var(--font);
+      background: var(--bg-deep);
+      color: var(--text);
+      line-height: 1.72;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      overflow-x: hidden;
+    }
+
+    /* ───── Ambient Background Glow ───────────────────────── */
+    .ambient-glow {
+      position: fixed;
+      pointer-events: none;
+      z-index: 0;
+      border-radius: 50%;
+      filter: blur(140px);
+      opacity: 0.28;
+      will-change: transform;
+    }
+
+    .glow-1 {
+      width: 700px;
+      height: 700px;
+      background: radial-gradient(circle, rgba(34, 197, 94, 0.18) 0%, transparent 70%);
+      top: -200px;
+      left: -150px;
+      animation: floatGlow1 18s ease-in-out infinite;
+    }
+
+    .glow-2 {
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(79, 209, 197, 0.12) 0%, transparent 70%);
+      bottom: -150px;
+      right: -120px;
+      animation: floatGlow2 22s ease-in-out infinite;
+    }
+
+    .glow-3 {
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(34, 197, 94, 0.10) 0%, transparent 70%);
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      animation: floatGlow3 20s ease-in-out infinite;
+    }
+
+    @keyframes floatGlow1 {
+
+      0%,
+      100% {
+        transform: translate(0, 0) scale(1);
+      }
+
+      33% {
+        transform: translate(60px, 40px) scale(1.08);
+      }
+
+      66% {
+        transform: translate(-30px, -20px) scale(0.94);
+      }
+    }
+
+    @keyframes floatGlow2 {
+
+      0%,
+      100% {
+        transform: translate(0, 0) scale(1);
+      }
+
+      33% {
+        transform: translate(-50px, -30px) scale(1.06);
+      }
+
+      66% {
+        transform: translate(40px, 20px) scale(0.92);
+      }
+    }
+
+    @keyframes floatGlow3 {
+
+      0%,
+      100% {
+        transform: translate(-50%, -50%) scale(1);
+      }
+
+      50% {
+        transform: translate(-50%, -50%) scale(1.15);
+      }
+    }
+
+    /* ───── Reading Progress Bar ──────────────────────────── */
+    .progress-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--primary), var(--secondary));
+      z-index: 10000;
+      transition: width 0.15s linear;
+      border-radius: 0 2px 2px 0;
+    }
+
+    /* ───── Sticky Navigation ─────────────────────────────── */
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(5, 11, 24, 0.78);
+      backdrop-filter: blur(20px) saturate(180%);
+      -webkit-backdrop-filter: blur(20px) saturate(180%);
+      border-bottom: 1px solid var(--border);
+      transition: background 0.3s ease, border-color 0.3s ease;
+    }
+
+    .navbar.scrolled {
+      background: rgba(5, 11, 24, 0.92);
+      border-bottom-color: rgba(148, 163, 184, 0.12);
+    }
+
+    .navbar-inner {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 36px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 68px;
+    }
+
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: var(--text);
+    }
+
+    .nav-logo {
+      width: 36px;
+      height: 36px;
+      border-radius: 9px;
+      overflow: hidden;
+      flex-shrink: 0;
+      box-shadow: 0 2px 14px rgba(34, 197, 94, 0.22);
+    }
+
+    .nav-logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .nav-app-name {
+      font-size: 1.08rem;
+      font-weight: 700;
+      letter-spacing: -0.3px;
+      color: var(--text);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 14px;
+      border-radius: 8px;
+      font-size: 0.82rem;
+      font-weight: 500;
+      color: var(--text-secondary);
+      text-decoration: none;
+      transition: all var(--transition);
+      white-space: nowrap;
+    }
+
+    .nav-links a:hover {
+      color: var(--text);
+      background: rgba(255, 255, 255, 0.03);
+    }
+
+    .nav-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 9px 20px;
+      border-radius: 8px;
+      font-size: 0.84rem;
+      font-weight: 600;
+      color: #050B18;
+      background: var(--primary);
+      text-decoration: none;
+      transition: all var(--transition);
+      white-space: nowrap;
+    }
+
+    .nav-cta:hover {
+      background: #1ed460;
+      box-shadow: 0 4px 22px rgba(34, 197, 94, 0.32);
+    }
+
+    .nav-hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 6px;
+      z-index: 1001;
+    }
+
+    .nav-hamburger span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: var(--text);
+      border-radius: 2px;
+      transition: all var(--transition);
+    }
+
+    .nav-hamburger.active span:nth-child(1) {
+      transform: translateY(7px) rotate(45deg);
+    }
+
+    .nav-hamburger.active span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .nav-hamburger.active span:nth-child(3) {
+      transform: translateY(-7px) rotate(-45deg);
+    }
+
+    /* ───── Hero Section ──────────────────────────────────── */
+    .hero {
+      position: relative;
+      padding: 90px 24px 80px;
+      text-align: center;
+      overflow: hidden;
+      z-index: 1;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    .hero-logo {
+      width: 88px;
+      height: 88px;
+      border-radius: 22px;
+      overflow: hidden;
+      margin: 0 auto 28px;
+      box-shadow: 0 10px 40px rgba(34, 197, 94, 0.22);
+      border: 1px solid rgba(34, 197, 94, 0.18);
+      animation: heroLogoIn 0.8s cubic-bezier(0.4, 0, 0.2, 1) both;
+    }
+
+    .hero-logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    @keyframes heroLogoIn {
+      from {
+        opacity: 0;
+        transform: scale(0.85) translateY(10px);
+      }
+
+      to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+      }
+    }
+
+    .hero-app-name {
+      font-size: 3.2rem;
+      font-weight: 900;
+      letter-spacing: -1.2px;
+      color: var(--text);
+      line-height: 1.1;
+      margin-bottom: 4px;
+      animation: heroFadeIn 0.7s 0.1s cubic-bezier(0.4, 0, 0.2, 1) both;
+    }
+
+    .hero-app-name span {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero-label {
+      font-size: 0.9rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 2.5px;
+      color: var(--primary);
+      margin-bottom: 14px;
+      animation: heroFadeIn 0.7s 0.15s cubic-bezier(0.4, 0, 0.2, 1) both;
+    }
+
+    .hero-tagline {
+      font-size: 1.2rem;
+      font-weight: 400;
+      color: var(--text-secondary);
+      margin-bottom: 10px;
+      animation: heroFadeIn 0.7s 0.2s cubic-bezier(0.4, 0, 0.2, 1) both;
+    }
+
+    .hero-subtitle {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      max-width: 500px;
+      margin: 0 auto 32px;
+      line-height: 1.6;
+      animation: heroFadeIn 0.7s 0.25s cubic-bezier(0.4, 0, 0.2, 1) both;
+    }
+
+    @keyframes heroFadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(16px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* ───── Hero Badges ───────────────────────────────────── */
+    .hero-badges {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      animation: heroFadeIn 0.7s 0.3s cubic-bezier(0.4, 0, 0.2, 1) both;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 7px 16px;
+      border-radius: 100px;
+      font-size: 0.78rem;
+      font-weight: 500;
+      color: var(--text-secondary);
+      background: rgba(255, 255, 255, 0.025);
+      border: 1px solid var(--border);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      transition: all var(--transition);
+    }
+
+    .badge:hover {
+      border-color: var(--border-hover);
+      background: rgba(255, 255, 255, 0.04);
+    }
+
+    .badge-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    .badge-dot.green {
+      background: var(--primary);
+      box-shadow: 0 0 8px rgba(34, 197, 94, 0.5);
+    }
+
+    .badge-dot.teal {
+      background: var(--secondary);
+      box-shadow: 0 0 8px rgba(79, 209, 197, 0.4);
+    }
+
+    .badge svg {
+      width: 14px;
+      height: 14px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 2;
+    }
+
+    /* ───── Main Layout ───────────────────────────────────── */
+    .main-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 36px 100px;
+      display: grid;
+      grid-template-columns: 250px 1fr;
+      gap: 48px;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* ───── Sidebar ───────────────────────────────────────── */
+    .sidebar {
+      position: sticky;
+      top: 108px;
+      align-self: start;
+      max-height: calc(100vh - 160px);
+      overflow-y: auto;
+      scrollbar-width: thin;
+      scrollbar-color: rgba(148, 163, 184, 0.12) transparent;
+    }
+
+    .sidebar::-webkit-scrollbar {
+      width: 3px;
+    }
+
+    .sidebar::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    .sidebar::-webkit-scrollbar-thumb {
+      background: rgba(148, 163, 184, 0.12);
+      border-radius: 3px;
+    }
+
+    .sidebar-label {
+      font-size: 0.68rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--text-muted);
+      margin-bottom: 18px;
+    }
+
+    .sidebar-nav {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 1px;
+    }
+
+    .sidebar-nav li {
+      position: relative;
+    }
+
+    .sidebar-nav a {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 14px;
+      border-radius: 0 8px 8px 0;
+      font-size: 0.84rem;
+      font-weight: 500;
+      color: var(--text-secondary);
+      text-decoration: none;
+      transition: all var(--transition);
+      border-left: 2px solid transparent;
+    }
+
+    .sidebar-nav a:hover {
+      color: var(--text);
+      background: rgba(255, 255, 255, 0.02);
+    }
+
+    .sidebar-nav a.toc-active {
+      color: var(--primary);
+      background: var(--primary-dim);
+      border-left-color: var(--primary);
+      font-weight: 600;
+    }
+
+    .sidebar-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--text-muted);
+      flex-shrink: 0;
+      transition: all var(--transition);
+    }
+
+    .sidebar-nav a.toc-active .sidebar-dot {
+      background: var(--primary);
+      box-shadow: 0 0 8px rgba(34, 197, 94, 0.5);
+    }
+
+    /* ───── Content Area ──────────────────────────────────── */
+    .content-area {
+      min-width: 0;
+    }
+
+    /* ───── Section Cards ─────────────────────────────────── */
+    .section-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      margin-bottom: 22px;
+      overflow: hidden;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      box-shadow: 0 4px 28px rgba(0, 0, 0, 0.28);
+      transition: border-color var(--transition), box-shadow var(--transition);
+      opacity: 0;
+      transform: translateY(28px);
+    }
+
+    .section-card.revealed {
+      opacity: 1;
+      transform: translateY(0);
+      transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1), transform 0.6s cubic-bezier(0.4, 0, 0.2, 1), border-color var(--transition), box-shadow var(--transition);
+    }
+
+    .section-card:hover {
+      border-color: var(--border-hover);
+      box-shadow: 0 8px 44px rgba(0, 0, 0, 0.38);
+    }
+
+    .section-card.scroll-highlight {
+      border-color: rgba(34, 197, 94, 0.22);
+      box-shadow: 0 0 0 1px rgba(34, 197, 94, 0.06), 0 8px 44px rgba(0, 0, 0, 0.38);
+    }
+
+    .card-header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 24px 30px;
+      border-bottom: 1px solid var(--border);
+      background: rgba(255, 255, 255, 0.008);
+    }
+
+    .card-icon-wrap {
+      width: 44px;
+      height: 44px;
+      min-width: 44px;
+      border-radius: 11px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--primary-dim);
+      color: var(--primary);
+      border: 1px solid rgba(34, 197, 94, 0.12);
+    }
+
+    .card-icon-wrap svg {
+      width: 21px;
+      height: 21px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 1.6;
+    }
+
+    .card-title {
+      font-size: 1.08rem;
+      font-weight: 700;
+      color: var(--text);
+      letter-spacing: -0.2px;
+      flex: 1;
+    }
+
+    .card-number {
+      font-size: 0.7rem;
+      font-weight: 700;
+      color: var(--primary);
+      background: var(--primary-dim);
+      border-radius: 100px;
+      padding: 4px 11px;
+      letter-spacing: 0.5px;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .card-body {
+      padding: 26px 30px;
+    }
+
+    .card-body p {
+      color: var(--text-secondary);
+      font-size: 0.93rem;
+      margin-bottom: 14px;
+      line-height: 1.78;
+    }
+
+    .card-body p:last-child {
+      margin-bottom: 0;
+    }
+
+    .card-body strong {
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    /* ───── Data Grid ─────────────────────────────────────── */
+    .data-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+      gap: 10px;
+      margin-top: 6px;
+    }
+
+    .data-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      background: rgba(255, 255, 255, 0.015);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 16px 17px;
+      transition: all var(--transition);
+    }
+
+    .data-item:hover {
+      background: var(--primary-dim);
+      border-color: rgba(34, 197, 94, 0.18);
+    }
+
+    .data-item-icon {
+      width: 36px;
+      height: 36px;
+      min-width: 36px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(34, 197, 94, 0.06);
+      color: var(--primary);
+    }
+
+    .data-item-icon svg {
+      width: 18px;
+      height: 18px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 1.6;
+    }
+
+    .data-item-content strong {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 2px;
+    }
+
+    .data-item-content span {
+      font-size: 0.77rem;
+      color: var(--text-secondary);
+      line-height: 1.4;
+    }
+
+    /* ───── Policy List ───────────────────────────────────── */
+    .policy-list {
+      list-style: none;
+      margin-top: 6px;
+    }
+
+    .policy-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      color: var(--text-secondary);
+      font-size: 0.93rem;
+      padding: 10px 0;
+      border-bottom: 1px solid var(--border);
+      line-height: 1.62;
+    }
+
+    .policy-list li:last-child {
+      border-bottom: none;
+    }
+
+    .policy-list li::before {
+      content: '';
+      display: block;
+      min-width: 20px;
+      width: 20px;
+      height: 20px;
+      margin-top: 2px;
+      border-radius: 50%;
+      background: var(--primary-dim);
+      flex-shrink: 0;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%2322C55E' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 12px;
+    }
+
+    .policy-list li strong {
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    /* ───── Highlight Box ─────────────────────────────────── */
+    .highlight-box {
+      background: var(--primary-dim);
+      border-left: 3px solid var(--primary);
+      border-radius: 0 var(--radius-xs) var(--radius-xs) 0;
+      padding: 15px 20px;
+      margin-top: 16px;
+      font-size: 0.89rem;
+      color: var(--primary);
+      font-weight: 500;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      line-height: 1.6;
+    }
+
+    .highlight-box .hl-icon {
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    .highlight-box .hl-icon svg {
+      width: 18px;
+      height: 18px;
+      stroke: var(--primary);
+      fill: none;
+      stroke-width: 2;
+    }
+
+    /* ───── Info Box ──────────────────────────────────────── */
+    .info-box {
+      background: var(--secondary-dim);
+      border-left: 3px solid var(--secondary);
+      border-radius: 0 var(--radius-xs) var(--radius-xs) 0;
+      padding: 15px 20px;
+      margin-top: 14px;
+      font-size: 0.89rem;
+      color: var(--secondary);
+      font-weight: 500;
+      line-height: 1.6;
+    }
+
+    /* ───── Trust Section ─────────────────────────────────── */
+    .trust-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+      gap: 14px;
+      margin-top: 8px;
+    }
+
+    .trust-card {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      background: rgba(255, 255, 255, 0.015);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 20px 22px;
+      transition: all var(--transition);
+    }
+
+    .trust-card:hover {
+      background: var(--primary-dim);
+      border-color: rgba(34, 197, 94, 0.18);
+    }
+
+    .trust-icon {
+      width: 40px;
+      height: 40px;
+      min-width: 40px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(34, 197, 94, 0.08);
+      color: var(--primary);
+    }
+
+    .trust-icon svg {
+      width: 20px;
+      height: 20px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 1.6;
+    }
+
+    .trust-content strong {
+      display: block;
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 3px;
+    }
+
+    .trust-content span {
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+      line-height: 1.4;
+    }
+
+    /* ───── Contact Block ─────────────────────────────────── */
+    .contact-block {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      background: rgba(255, 255, 255, 0.015);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 20px 22px;
+      margin-top: 12px;
+      text-decoration: none;
+      transition: all var(--transition);
+    }
+
+    .contact-block:hover {
+      border-color: rgba(34, 197, 94, 0.28);
+      background: var(--primary-dim);
+      box-shadow: 0 4px 24px rgba(34, 197, 94, 0.08);
+    }
+
+    .contact-avatar {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      background: var(--primary-dim);
+      color: var(--primary);
+      border: 1px solid rgba(34, 197, 94, 0.12);
+    }
+
+    .contact-avatar svg {
+      width: 22px;
+      height: 22px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 1.6;
+    }
+
+    .contact-info strong {
+      display: block;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .contact-info span {
+      font-size: 0.85rem;
+      color: var(--primary);
+      font-weight: 500;
+    }
+
+    /* ───── FAQ Section ───────────────────────────────────── */
+    .faq-section {
+      margin-top: 14px;
+    }
+
+    .faq-section-title {
+      font-size: 1.12rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      letter-spacing: -0.3px;
+    }
+
+    .faq-section-title svg {
+      width: 22px;
+      height: 22px;
+      stroke: var(--primary);
+      fill: none;
+      stroke-width: 1.6;
+    }
+
+    .faq-item {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      margin-bottom: 10px;
+      overflow: hidden;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      transition: all var(--transition);
+    }
+
+    .faq-item:hover {
+      border-color: var(--border-hover);
+    }
+
+    .faq-question {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      padding: 18px 22px;
+      background: none;
+      border: none;
+      color: var(--text);
+      font-family: var(--font);
+      font-size: 0.92rem;
+      font-weight: 600;
+      cursor: pointer;
+      text-align: left;
+      transition: color var(--transition);
+      line-height: 1.5;
+    }
+
+    .faq-question:hover {
+      color: var(--primary);
+    }
+
+    .faq-chevron {
+      width: 20px;
+      height: 20px;
+      flex-shrink: 0;
+      transition: transform 0.32s cubic-bezier(0.4, 0, 0.2, 1);
+      color: var(--text-secondary);
+    }
+
+    .faq-chevron svg {
+      width: 20px;
+      height: 20px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 2;
+    }
+
+    .faq-item.open .faq-chevron {
+      transform: rotate(180deg);
+      color: var(--primary);
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.38s cubic-bezier(0.4, 0, 0.2, 1), padding 0.38s cubic-bezier(0.4, 0, 0.2, 1);
+      padding: 0 22px;
+    }
+
+    .faq-item.open .faq-answer {
+      max-height: 400px;
+      padding: 0 22px 20px;
+    }
+
+    .faq-answer p {
+      color: var(--text-secondary);
+      font-size: 0.89rem;
+      line-height: 1.7;
+    }
+
+    /* ───── Footer ────────────────────────────────────────── */
+    .site-footer {
+      background: #020813;
+      border-top: 1px solid var(--border);
+      padding: 56px 24px 36px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .footer-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr auto auto;
+      gap: 48px;
+      align-items: start;
+    }
+
+    .footer-brand-col {
+      max-width: 340px;
+    }
+
+    .footer-brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 10px;
+    }
+
+    .footer-logo {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      overflow: hidden;
+      flex-shrink: 0;
+      box-shadow: 0 2px 14px rgba(34, 197, 94, 0.18);
+    }
+
+    .footer-logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .footer-app-name {
+      font-size: 1.18rem;
+      font-weight: 700;
+      color: var(--text);
+      letter-spacing: -0.3px;
+    }
+
+    .footer-desc {
+      font-size: 0.86rem;
+      color: var(--text-secondary);
+      margin-bottom: 14px;
+      line-height: 1.6;
+    }
+
+    .footer-contact {
+      font-size: 0.84rem;
+      color: var(--text-secondary);
+    }
+
+    .footer-contact a {
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color var(--transition);
+    }
+
+    .footer-contact a:hover {
+      color: #1ed460;
+    }
+
+    .footer-col-title {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      color: var(--text-muted);
+      margin-bottom: 16px;
+    }
+
+    .footer-links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .footer-links a {
+      font-size: 0.84rem;
+      color: var(--text-secondary);
+      text-decoration: none;
+      transition: color var(--transition);
+    }
+
+    .footer-links a:hover {
+      color: var(--text);
+    }
+
+    .footer-bottom {
+      max-width: 1200px;
+      margin: 40px auto 0;
+      padding-top: 20px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    .back-to-top {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--primary);
+      font-size: 0.82rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: color var(--transition);
+    }
+
+    .back-to-top:hover {
+      color: #1ed460;
+    }
+
+    .back-to-top svg {
+      width: 14px;
+      height: 14px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 2.5;
+    }
+
+    /* ───── Mobile TOC ────────────────────────────────────── */
+    .mobile-toc {
+      display: none;
+      margin-bottom: 28px;
+    }
+
+    .mobile-toc select {
+      width: 100%;
+      padding: 13px 18px;
+      border-radius: 10px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      color: var(--text);
+      font-family: var(--font);
+      font-size: 0.9rem;
+      font-weight: 500;
+      cursor: pointer;
+      appearance: none;
+      -webkit-appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%2394A3B8' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 16px center;
+      transition: border-color var(--transition);
+    }
+
+    .mobile-toc select:focus {
+      outline: none;
+      border-color: var(--primary);
+    }
+
+    /* ───── Responsive ────────────────────────────────────── */
+    @media (max-width: 1024px) {
+      .main-container {
+        grid-template-columns: 1fr;
+        gap: 32px;
+        padding: 0 24px 80px;
+      }
+
+      .sidebar {
+        display: none;
+      }
+
+      .mobile-toc {
+        display: block;
+      }
+
+      .footer-inner {
+        grid-template-columns: 1fr 1fr;
+        gap: 36px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .navbar-inner {
+        padding: 0 20px;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .nav-links.open {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 68px;
+        left: 0;
+        right: 0;
+        background: rgba(5, 11, 24, 0.94);
+        backdrop-filter: blur(20px) saturate(180%);
+        -webkit-backdrop-filter: blur(20px) saturate(180%);
+        border-bottom: 1px solid var(--border);
+        padding: 8px 20px 18px;
+        gap: 2px;
+      }
+
+      .nav-links.open a {
+        padding: 12px 14px;
+        border-radius: 8px;
+        width: 100%;
+      }
+
+      .nav-hamburger {
+        display: flex;
+      }
+
+      .nav-cta {
+        display: none;
+      }
+
+      .hero {
+        padding: 60px 20px 60px;
+      }
+
+      .hero-app-name {
+        font-size: 2.4rem;
+      }
+
+      .hero-logo {
+        width: 68px;
+        height: 68px;
+        border-radius: 17px;
+      }
+
+      .card-header,
+      .card-body {
+        padding: 18px 20px;
+      }
+
+      .data-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .card-number {
+        display: none;
+      }
+
+      .trust-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .footer-inner {
+        grid-template-columns: 1fr;
+        gap: 28px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero-app-name {
+        font-size: 1.9rem;
+      }
+
+      .hero-tagline {
+        font-size: 1rem;
+      }
+
+      .data-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .trust-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .section-card {
+        border-radius: var(--radius-md);
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .hero-badges {
+        gap: 6px;
+      }
+
+      .badge {
+        font-size: 0.72rem;
+        padding: 6px 12px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ════════════════════════════════════════════════════════════
+       AMBIENT GLOW EFFECTS
+       ════════════════════════════════════════════════════════════ -->
+  <div class="ambient-glow glow-1" aria-hidden="true"></div>
+  <div class="ambient-glow glow-2" aria-hidden="true"></div>
+  <div class="ambient-glow glow-3" aria-hidden="true"></div>
+
+  <!-- ════════════════════════════════════════════════════════════
+       READING PROGRESS BAR
+       ════════════════════════════════════════════════════════════ -->
+  <div class="progress-bar" id="progressBar" aria-hidden="true"></div>
+
+  <!-- ════════════════════════════════════════════════════════════
+       STICKY NAVIGATION
+       ════════════════════════════════════════════════════════════ -->
+  <nav class="navbar" id="navbar" role="navigation" aria-label="Main navigation">
+    <div class="navbar-inner">
+      <a href="#top" class="nav-brand">
+        <div class="nav-logo">
+          <img src="budget-king-logo.png" alt="Budget King Logo" />
+        </div>
+        <span class="nav-app-name">Budget King</span>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#introduction">Introduction</a></li>
+        <li><a href="#data-collected">Data Collected</a></li>
+        <li><a href="#data-use">Data Usage</a></li>
+        <li><a href="#data-storage">Storage</a></li>
+        <li><a href="#trust">Trust</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <a href="#contact" class="nav-cta">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+          stroke-linecap="round" stroke-linejoin="round">
+          <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+          <polyline points="22,6 12,13 2,6" />
+        </svg>
+        Contact Us
+      </a>
+      <button class="nav-hamburger" id="navHamburger" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ════════════════════════════════════════════════════════════
+       HERO SECTION
+       ════════════════════════════════════════════════════════════ -->
+  <header class="hero" id="top">
+    <div class="hero-content">
+      <div class="hero-logo">
+        <img src="budget-king-logo.png" alt="Budget King Logo" />
+      </div>
+      <h1 class="hero-app-name">Budget <span>King</span></h1>
+      <p class="hero-label">Privacy Policy</p>
+      <p class="hero-tagline">Track Every Rupee Securely</p>
+      <p class="hero-subtitle">Protecting your financial information with transparency, security and trust.</p>
+      <div class="hero-badges">
+        <span class="badge">
+          <span class="badge-dot green"></span>
+          Last Updated: June 2026
+        </span>
+        <span class="badge">
+          <svg viewBox="0 0 24 24">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+          </svg>
+          Secure Data
+        </span>
+        <span class="badge">
+          <svg viewBox="0 0 24 24">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+            <circle cx="12" cy="7" r="4" />
+          </svg>
+          Google Sign-In
+        </span>
+        <span class="badge">
+          <span class="badge-dot teal"></span>
+          HTTPS Encrypted
+        </span>
+      </div>
+    </div>
+  </header>
+
+  <!-- ════════════════════════════════════════════════════════════
+       MAIN CONTENT
+       ════════════════════════════════════════════════════════════ -->
+  <div class="main-container">
+
+    <!-- Sidebar TOC -->
+    <aside class="sidebar" aria-label="Table of contents">
+      <div class="sidebar-label">On This Page</div>
+      <ul class="sidebar-nav" id="sidebarNav">
+        <li><a href="#introduction"><span class="sidebar-dot"></span> Introduction</a></li>
+        <li><a href="#data-collected"><span class="sidebar-dot"></span> Information We Collect</a></li>
+        <li><a href="#data-use"><span class="sidebar-dot"></span> How We Use Your Data</a></li>
+        <li><a href="#data-storage"><span class="sidebar-dot"></span> Data Storage</a></li>
+        <li><a href="#data-sharing"><span class="sidebar-dot"></span> Data Sharing</a></li>
+        <li><a href="#data-security"><span class="sidebar-dot"></span> Data Security</a></li>
+        <li><a href="#account-deletion"><span class="sidebar-dot"></span> Account Deletion</a></li>
+        <li><a href="#trust"><span class="sidebar-dot"></span> Trust & Security</a></li>
+        <li><a href="#faq"><span class="sidebar-dot"></span> FAQ</a></li>
+        <li><a href="#contact"><span class="sidebar-dot"></span> Contact</a></li>
+      </ul>
+    </aside>
+
+    <!-- Mobile TOC -->
+    <div class="mobile-toc">
+      <select id="mobileToc" aria-label="Jump to section">
+        <option value="">— Jump to Section —</option>
+        <option value="#introduction">Introduction</option>
+        <option value="#data-collected">Information We Collect</option>
+        <option value="#data-use">How We Use Your Data</option>
+        <option value="#data-storage">Data Storage</option>
+        <option value="#data-sharing">Data Sharing</option>
+        <option value="#data-security">Data Security</option>
+        <option value="#account-deletion">Account Deletion</option>
+        <option value="#trust">Trust & Security</option>
+        <option value="#faq">FAQ</option>
+        <option value="#contact">Contact</option>
+      </select>
+    </div>
+
+    <!-- Content Area -->
+    <div class="content-area">
+
+      <!-- 01 · Introduction -->
+      <section class="section-card" id="introduction" aria-labelledby="title-intro">
+        <div class="card-header">
+          <div class="card-icon-wrap" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="10" />
+              <line x1="12" y1="16" x2="12" y2="12" />
+              <line x1="12" y1="8" x2="12.01" y2="8" />
+            </svg>
+          </div>
+          <h2 class="card-title" id="title-intro">Introduction</h2>
+          <span class="card-number">01</span>
+        </div>
+        <div class="card-body">
+          <p>Welcome to <strong>Budget King</strong> — your personal finance companion designed to help you track every
+            rupee with precision and confidence. This Privacy Policy explains how we collect, use, disclose, and
+            safeguard your information when you use our Android application.</p>
+          <p>We are committed to protecting your privacy and handling your data with complete transparency and care. By
+            using Budget King, you agree to the practices described in this policy. We encourage you to read this
+            document thoroughly.</p>
+          <p>If you do not agree with the terms stated here, please discontinue use of the application and contact us
+            with any concerns.</p>
+          <div class="highlight-box">
+            <span class="hl-icon"><svg viewBox="0 0 24 24">
+                <path d="M12 2L2 7l10 5 10-5-10-5z" />
+                <path d="M2 17l10 5 10-5" />
+                <path d="M2 12l10 5 10-5" />
+              </svg></span>
+            We only collect the minimum data necessary to provide you with the best budgeting experience. We never sell
+            your personal data to third parties.
+          </div>
+        </div>
+      </section>
+
+      <!-- 02 · Information We Collect -->
+      <section class="section-card" id="data-collected" aria-labelledby="title-collect">
+        <div class="card-header">
+          <div class="card-icon-wrap" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+              <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
+              <line x1="3" y1="9" x2="21" y2="9" />
+              <line x1="9" y1="21" x2="9" y2="9" />
+            </svg>
+          </div>
+          <h2 class="card-title" id="title-collect">Information We Collect</h2>
+          <span class="card-number">02</span>
+        </div>
+        <div class="card-body">
+          <p>When you use Budget King, we collect the following categories of data to enable core app functionality. All
+            financial data is entered by you — we never access your bank accounts or payment systems.</p>
+          <div class="data-grid" role="list">
+            <div class="data-item" role="listitem">
+              <div class="data-item-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                  <polyline points="22,6 12,13 2,6" />
+                </svg>
+              </div>
+              <div class="data-item-content">
+                <strong>Email Address</strong>
+                <span>Collected via Google Sign-In for authentication</span>
+              </div>
+            </div>
+            <div class="data-item" role="listitem">
+              <div class="data-item-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                  <circle cx="12" cy="7" r="4" />
+                </svg>
+              </div>
+              <div class="data-item-content">
+                <strong>User Profile</strong>
+                <span>Name and photo URL from your Google account</span>
+              </div>
+            </div>
+            <div class="data-item" role="listitem">
+              <div class="data-item-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                  <line x1="12" y1="1" x2="12" y2="23" />
+                  <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
+                </svg>
+              </div>
+              <div class="data-item-content">
+                <strong>Expenses</strong>
+                <span>Amount, category, date, and notes you enter</span>
+              </div>
+            </div>
+            <div class="data-item" role="listitem">
+              <div class="data-item-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                  <circle cx="12" cy="12" r="10" />
+                  <circle cx="12" cy="12" r="6" />
+                  <circle cx="12" cy="12" r="2" />
+                </svg>
+              </div>
+              <div class="data-item-content">
+                <strong>Budgets</strong>
+                <span>Budget limits and categories you configure</span>
+              </div>
+            </div>
+            <div class="data-item" role="listitem">
+              <div class="data-item-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                  <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                  <polyline points="9 22 9 12 15 12 15 22" />
+                </svg>
+              </div>
+              <div class="data-item-content">
+                <strong>Shops</strong>
+                <span>Merchant and store names linked to expenses</span>
+              </div>
+            </div>
+            <div class="data-item" role="listitem">
+              <div class="data-item-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                  <polyline points="17 1 21 5 17 9" />
+                  <path d="M3 11V9a4 4 0 0 1 4-4h14" />
+                  <polyline points="7 23 3 19 7 15" />
+                  <path d="M21 13v2a4 4 0 0 1-4 4H3" />
+                </svg>
+              </div>
+              <div class="data-item-content">
+                <strong>Transactions</strong>
+                <span>Full transaction history you record in the app</span>
+              </div>
+            </div>
+          </div>
+          <div class="info-box" role="note">
+            ℹ️ &nbsp;All financial data is data you explicitly enter into the app. We do not access your bank accounts,
+            UPI transactions, or payment systems.
+          </div>
+        </div>
+      </section>
+
+      <!-- 03 · How We Use Your Information -->
+      <section class="section-card" id="data-use" aria-labelledby="title-use">
+        <div class="card-header">
+          <div class="card-icon-wrap" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="3" />
+              <path
+                d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z" />
+            </svg>
+          </div>
+          <h2 class="card-title" id="title-use">How We Use Your Information</h2>
+          <span class="card-number">03</span>
+        </div>
+        <div class="card-body">
+          <p>We use the information we collect for the following purposes and nothing beyond:</p>
+          <ul class="policy-list">
+            <li>Authenticate your identity via <strong>Google Sign-In</strong> and maintain your session securely</li>
+            <li>Store and sync your financial data (expenses, budgets, transactions) across your devices</li>
+            <li>Display personalised budget summaries, spending insights, and financial reports</li>
+            <li>Enable you to manage shops, categories, and recurring transactions</li>
+            <li>Send you budget alerts and notifications you configure within the app</li>
+            <li>Improve app performance, fix bugs, and develop new features based on usage patterns</li>
+            <li>Ensure the security and integrity of your account and our services</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- 04 · Data Storage -->
+      <section class="section-card" id="data-storage" aria-labelledby="title-storage">
+        <div class="card-header">
+          <div class="card-icon-wrap" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+              <ellipse cx="12" cy="5" rx="9" ry="3" />
+              <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3" />
+              <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5" />
+            </svg>
+          </div>
+          <h2 class="card-title" id="title-storage">Data Storage</h2>
+          <span class="card-number">04</span>
+        </div>
+        <div class="card-body">
+          <p>Your data is securely stored using <strong>Supabase</strong>, an open-source cloud database platform built
+            on PostgreSQL. Supabase servers are hosted on AWS infrastructure, which comply with industry-leading
+            security and compliance standards including SOC 2 and GDPR.</p>
+          <ul class="policy-list">
+            <li>Data is stored per-user and is logically isolated from other users' data</li>
+            <li>Your data is retained for as long as your account remains active</li>
+            <li>Upon account deletion, all associated data is permanently removed from our systems within <strong>30
+                days</strong></li>
+            <li>We do not store sensitive payment card details or banking credentials</li>
+          </ul>
+          <div class="highlight-box">
+            <span class="hl-icon"><svg viewBox="0 0 24 24">
+                <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+                <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+              </svg></span>
+            Data in transit is encrypted using TLS (Transport Layer Security) and data at rest is encrypted using
+            Supabase's built-in encryption with AES-256.
+          </div>
+        </div>
+      </section>
+
+      <!-- 05 · Data Sharing -->
+      <section class="section-card" id="data-sharing" aria-labelledby="title-sharing">
+        <div class="card-header">
+          <div class="card-icon-wrap" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+              <circle cx="18" cy="5" r="3" />
+              <circle cx="6" cy="12" r="3" />
+              <circle cx="18" cy="19" r="3" />
+              <line x1="8.59" y1="13.51" x2="15.42" y2="17.49" />
+              <line x1="15.41" y1="6.51" x2="8.59" y2="10.49" />
+            </svg>
+          </div>
+          <h2 class="card-title" id="title-sharing">Data Sharing</h2>
+          <span class="card-number">05</span>
+        </div>
+        <div class="card-body">
+          <p>We take your privacy seriously. We do <strong>not</strong> sell, trade, or rent your personal information
+            to any third party. Your data may be shared only in these limited circumstances:</p>
+          <ul class="policy-list">
+            <li><strong>Supabase</strong> — as our infrastructure provider for database storage and authentication</li>
+            <li><strong>Legal obligations</strong> — if required by law, court order, or government authority</li>
+            <li><strong>Safety & security</strong> — to protect the rights, property, or safety of Budget King, its
+              users, or the public</li>
+          </ul>
+          <div class="highlight-box">
+            <span class="hl-icon"><svg viewBox="0 0 24 24">
+                <line x1="18" y1="6" x2="6" y2="18" />
+                <line x1="6" y1="6" x2="18" y2="18" />
+              </svg></span>
+            We never share your financial data with advertisers, marketers, data brokers, or any other commercial third
+            parties.
+          </div>
+        </div>
+      </section>
+
+      <!-- 06 · Data Security -->
+      <section class="section-card" id="data-security" aria-labelledby="title-security">
+        <div class="card-header">
+          <div class="card-icon-wrap" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+            </svg>
+          </div>
+          <h2 class="card-title" id="title-security">Data Security</h2>
+          <span class="card-number">06</span>
+        </div>
+        <div class="card-body">
+          <p>We implement robust technical and organisational measures to protect your information against unauthorised
+            access, loss, destruction, or alteration.</p>
+          <ul class="policy-list">
+            <li>Authentication is handled exclusively via <strong>Google Sign-In OAuth 2.0</strong> — we never store
+              your Google password</li>
+            <li>Supabase Row-Level Security (RLS) ensures each user can only access their own data</li>
+            <li>All communications between the app and Supabase are encrypted via <strong>HTTPS/TLS</strong></li>
+            <li>We regularly review and update our security practices to stay ahead of emerging threats</li>
+            <li>App access is tied to your Google account — enabling Google's two-factor authentication provides an
+              additional layer of protection</li>
+          </ul>
+          <div class="info-box" role="note">
+            ℹ️ &nbsp;While we strive to use best-in-class security measures, no method of electronic storage or internet
+            transmission is 100% secure. We encourage you to keep your Google account credentials safe.
+          </div>
+        </div>
+      </section>
+
+      <!-- 07 · Account Deletion -->
+      <section class="section-card" id="account-deletion" aria-labelledby="title-deletion">
+        <div class="card-header">
+          <div class="card-icon-wrap" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+              <polyline points="3 6 5 6 21 6" />
+              <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" />
+            </svg>
+          </div>
+          <h2 class="card-title" id="title-deletion">Account Deletion</h2>
+          <span class="card-number">07</span>
+        </div>
+        <div class="card-body">
+          <p>You have the right to delete your account and all associated data at any time. Budget King provides a
+            straightforward account deletion process:</p>
+          <ul class="policy-list">
+            <li>Open the Budget King app and tap on your <strong>Profile</strong> icon</li>
+            <li>Navigate to <strong>Security</strong> and tap on <strong>Delete My Account</strong></li>
+            <li>Type <strong>"DELETE"</strong> in the confirmation field to verify your intent</li>
+            <li>Confirm your decision — this action is permanent and cannot be undone</li>
+            <li>All your data (profile, expenses, budgets, shops, and transactions) will be permanently deleted from our
+              servers within <strong>30 days</strong></li>
+            <li>You may also request deletion by emailing us at the contact address below</li>
+          </ul>
+          <div class="highlight-box">
+            <span class="hl-icon"><svg viewBox="0 0 24 24">
+                <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" />
+                <line x1="12" y1="9" x2="12" y2="13" />
+                <line x1="12" y1="17" x2="12.01" y2="17" />
+              </svg></span>
+            Account deletion is irreversible. Please export or back up any financial records you wish to keep before
+            proceeding with deletion.
+          </div>
+        </div>
+      </section>
+
+      <!-- 08 · Trust & Security -->
+      <section class="section-card" id="trust" aria-labelledby="title-trust">
+        <div class="card-header">
+          <div class="card-icon-wrap" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+            </svg>
+          </div>
+          <h2 class="card-title" id="title-trust">Trust & Security</h2>
+          <span class="card-number">08</span>
+        </div>
+        <div class="card-body">
+          <p>Your trust is our foundation. Budget King is built with security-first principles to ensure your financial
+            data remains protected at all times.</p>
+          <div class="trust-grid">
+            <div class="trust-card">
+              <div class="trust-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                </svg>
+              </div>
+              <div class="trust-content">
+                <strong>Secure Authentication</strong>
+                <span>Google OAuth 2.0 for enterprise-grade identity verification</span>
+              </div>
+            </div>
+            <div class="trust-card">
+              <div class="trust-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                  <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+                  <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+                </svg>
+              </div>
+              <div class="trust-content">
+                <strong>Encrypted Data Transfer</strong>
+                <span>TLS 1.3 encryption for all data in transit</span>
+              </div>
+            </div>
+            <div class="trust-card">
+              <div class="trust-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                  <ellipse cx="12" cy="5" rx="9" ry="3" />
+                  <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3" />
+                  <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5" />
+                </svg>
+              </div>
+              <div class="trust-content">
+                <strong>Cloud Data Synchronization</strong>
+                <span>Real-time sync across devices via Supabase</span>
+              </div>
+            </div>
+            <div class="trust-card">
+              <div class="trust-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                  <polyline points="3 6 5 6 21 6" />
+                  <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" />
+                </svg>
+              </div>
+              <div class="trust-content">
+                <strong>User Controlled Data Deletion</strong>
+                <span>Full control to delete your account and data at any time</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 09 · FAQ -->
+      <div class="faq-section" id="faq">
+        <h3 class="faq-section-title">
+          <svg viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="10" />
+            <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
+            <line x1="12" y1="17" x2="12.01" y2="17" />
+          </svg>
+          Frequently Asked Questions
+        </h3>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            How is my data protected?
+            <span class="faq-chevron"><svg viewBox="0 0 24 24">
+                <polyline points="6 9 12 15 18 9" />
+              </svg></span>
+          </button>
+          <div class="faq-answer">
+            <p>Your data is protected through multiple layers of security: Google OAuth 2.0 authentication, Supabase
+              Row-Level Security (RLS) for data isolation, TLS 1.3 encryption for data in transit, and AES-256
+              encryption for data at rest. We never store your Google password, and all communications are encrypted
+              end-to-end.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            Can I delete my account?
+            <span class="faq-chevron"><svg viewBox="0 0 24 24">
+                <polyline points="6 9 12 15 18 9" />
+              </svg></span>
+          </button>
+          <div class="faq-answer">
+            <p>Yes. You can delete your account at any time by going to Profile → Security → Delete My Account, typing
+              "DELETE" to confirm, and your data will be permanently removed from our servers within 30 days. You can
+              also email us to request deletion manually.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            Is Google Sign-In secure?
+            <span class="faq-chevron"><svg viewBox="0 0 24 24">
+                <polyline points="6 9 12 15 18 9" />
+              </svg></span>
+          </button>
+          <div class="faq-answer">
+            <p>Absolutely. Budget King uses Google Sign-In with OAuth 2.0, the same industry-standard protocol used by
+              leading fintech and enterprise applications. We never receive or store your Google password.
+              Authentication is handled entirely by Google's secure infrastructure, and we only receive your email
+              address, display name, and profile photo URL.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            Where is my data stored?
+            <span class="faq-chevron"><svg viewBox="0 0 24 24">
+                <polyline points="6 9 12 15 18 9" />
+              </svg></span>
+          </button>
+          <div class="faq-answer">
+            <p>Your data is stored securely in Supabase, a PostgreSQL-based cloud database platform hosted on AWS
+              infrastructure. Supabase is SOC 2 and GDPR compliant, providing enterprise-grade security. Your data is
+              logically isolated using Row-Level Security (RLS) policies, ensuring you can only access your own
+              information.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 10 · Contact -->
+      <section class="section-card" id="contact" aria-labelledby="title-contact" style="margin-top: 22px;">
+        <div class="card-header">
+          <div class="card-icon-wrap" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+              <polyline points="22,6 12,13 2,6" />
+            </svg>
+          </div>
+          <h2 class="card-title" id="title-contact">Contact Information</h2>
+          <span class="card-number">10</span>
+        </div>
+        <div class="card-body">
+          <p>If you have any questions, concerns, or requests regarding this Privacy Policy or how we handle your data,
+            please reach out to us. We aim to respond within <strong>48 hours</strong>.</p>
+          <a href="mailto:ynezgaming@gmail.com" class="contact-block" aria-label="Send email to Budget King support">
+            <div class="contact-avatar" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                <polyline points="22,6 12,13 2,6" />
+              </svg>
+            </div>
+            <div class="contact-info">
+              <strong>Budget King Support</strong>
+              <span>ynezgaming@gmail.com</span>
+            </div>
+          </a>
+          <p style="margin-top: 18px;">We may update this Privacy Policy from time to time. Any significant changes will
+            be communicated within the app. Continued use of Budget King after changes are posted constitutes acceptance
+            of the updated policy.</p>
+        </div>
+      </section>
+
+    </div><!-- /content-area -->
+  </div><!-- /main-container -->
+
+  <!-- ════════════════════════════════════════════════════════════
+       FOOTER
+       ════════════════════════════════════════════════════════════ -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand-col">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <img src="budget-king-logo.png" alt="Budget King Logo" />
+          </div>
+          <span class="footer-app-name">Budget King</span>
+        </div>
+        <p class="footer-desc">Personal Finance & Expense Management</p>
+        <p class="footer-contact">
+          Contact: <a href="mailto:ynezgaming@gmail.com">ynezgaming@gmail.com</a>
+        </p>
+      </div>
+      <div>
+        <div class="footer-col-title">Legal</div>
+        <ul class="footer-links">
+          <li><a href="#introduction">Privacy Policy</a></li>
+          <li><a href="#account-deletion">Account Deletion</a></li>
+          <li><a href="#contact">Support</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Resources</div>
+        <ul class="footer-links">
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#trust">Trust & Security</a></li>
+          <li><a href="#top">Back to Top</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Budget King. All rights reserved.</span>
+      <a href="#top" class="back-to-top" aria-label="Back to top">
+        <svg viewBox="0 0 24 24">
+          <line x1="12" y1="19" x2="12" y2="5" />
+          <polyline points="5 12 12 5 19 12" />
+        </svg>
+        Back to top
+      </a>
+    </div>
+  </footer>
+
+  <!-- ════════════════════════════════════════════════════════════
+       SCRIPTS
+       ════════════════════════════════════════════════════════════ -->
+  <script>
+    (function () {
+      'use strict';
+
+      /* ── Reading Progress Bar ────────────────────────────── */
+      const progressBar = document.getElementById('progressBar');
+      function updateProgress() {
+        const scrollTop = window.scrollY;
+        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+        const progress = docHeight > 0 ? Math.min((scrollTop / docHeight) * 100, 100) : 0;
+        progressBar.style.width = progress + '%';
+      }
+      window.addEventListener('scroll', updateProgress, { passive: true });
+      updateProgress();
+
+      /* ── Navbar scroll state ─────────────────────────────── */
+      const navbar = document.getElementById('navbar');
+      window.addEventListener('scroll', function () {
+        navbar.classList.toggle('scrolled', window.scrollY > 20);
+      }, { passive: true });
+
+      /* ── Mobile hamburger menu ───────────────────────────── */
+      const hamburger = document.getElementById('navHamburger');
+      const navLinks = document.getElementById('navLinks');
+      if (hamburger && navLinks) {
+        hamburger.addEventListener('click', function () {
+          const isOpen = navLinks.classList.toggle('open');
+          hamburger.classList.toggle('active');
+          hamburger.setAttribute('aria-expanded', isOpen);
+        });
+        navLinks.querySelectorAll('a').forEach(function (link) {
+          link.addEventListener('click', function () {
+            navLinks.classList.remove('open');
+            hamburger.classList.remove('active');
+            hamburger.setAttribute('aria-expanded', 'false');
+          });
+        });
+      }
+
+      /* ── Mobile TOC dropdown ─────────────────────────────── */
+      const mobileToc = document.getElementById('mobileToc');
+      if (mobileToc) {
+        mobileToc.addEventListener('change', function () {
+          const target = this.value;
+          if (target) {
+            window.location.hash = target;
+            this.value = '';
+          }
+        });
+      }
+
+      /* ── FAQ accordion ───────────────────────────────────── */
+      document.querySelectorAll('.faq-question').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          const item = this.parentElement;
+          const isOpen = item.classList.contains('open');
+          document.querySelectorAll('.faq-item.open').forEach(function (openItem) {
+            openItem.classList.remove('open');
+            openItem.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+          });
+          if (!isOpen) {
+            item.classList.add('open');
+            this.setAttribute('aria-expanded', 'true');
+          }
+        });
+      });
+
+      /* ── Scroll Reveal Animations ────────────────────────── */
+      const revealCards = document.querySelectorAll('.section-card');
+      const revealObserver = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('revealed');
+            revealObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+      revealCards.forEach(function (card) {
+        revealObserver.observe(card);
+      });
+
+      /* ── Scroll Spy: highlight active TOC & section cards ── */
+      const sectionIds = [
+        'introduction', 'data-collected', 'data-use', 'data-storage',
+        'data-sharing', 'data-security', 'account-deletion', 'trust', 'faq', 'contact'
+      ];
+      const sidebarLinks = document.querySelectorAll('#sidebarNav a');
+      const navBarLinks = document.querySelectorAll('#navLinks a');
+
+      function getActiveSectionId() {
+        let active = sectionIds[0];
+        const viewportMid = window.innerHeight / 3;
+        for (let i = 0; i < sectionIds.length; i++) {
+          const el = document.getElementById(sectionIds[i]);
+          if (!el) continue;
+          if (el.getBoundingClientRect().top <= viewportMid) {
+            active = sectionIds[i];
+          }
+        }
+        const scrollBottom = window.innerHeight + window.scrollY;
+        const docHeight = document.documentElement.scrollHeight;
+        if (scrollBottom >= docHeight - 60) {
+          active = sectionIds[sectionIds.length - 1];
+        }
+        return active;
+      }
+
+      function updateActiveLinks() {
+        const active = getActiveSectionId();
+        sidebarLinks.forEach(function (link) {
+          const href = link.getAttribute('href');
+          link.classList.toggle('toc-active', href === '#' + active);
+        });
+        navBarLinks.forEach(function (link) {
+          const href = link.getAttribute('href');
+          link.classList.toggle('nav-active', href === '#' + active);
+        });
+        document.querySelectorAll('.section-card').forEach(function (card) {
+          card.classList.toggle('scroll-highlight', card.id === active);
+        });
+      }
+      window.addEventListener('scroll', updateActiveLinks, { passive: true });
+      updateActiveLinks();
+
+      /* ── Parallax glow effect on mouse move ──────────────── */
+      document.addEventListener('mousemove', function (e) {
+        const x = (e.clientX / window.innerWidth - 0.5) * 20;
+        const y = (e.clientY / window.innerHeight - 0.5) * 20;
+        document.querySelector('.glow-1').style.transform = 'translate(' + x + 'px, ' + y + 'px)';
+        document.querySelector('.glow-2').style.transform = 'translate(' + (-x) + 'px, ' + (-y) + 'px)';
+      }, { passive: true });
+
+    })();
+  </script>
+</body>
+
+</html>
